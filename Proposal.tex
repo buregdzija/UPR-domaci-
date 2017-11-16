@@ -1,0 +1,140 @@
+\documentclass[a4paper, 11pt]{article}
+
+% For displaying \layout command
+\usepackage[hmarginratio=1:1, bottom = 1.5in]{geometry}
+
+% For displaying page frame
+% \usepackage{showframe}
+
+% Forces footnotes at the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% For multicolumns and multirows
+\usepackage{multirow,tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% Font
+\usepackage[utf8]{inputenc}
+\usepackage[english, serbian]{babel}
+\selectlanguage{serbian}
+\usepackage{xcolor, colortbl}
+\usepackage[colorlinks=true, linkcolor=cyan, citecolor=green, urlcolor=blue]{hyperref}
+
+% Custom colors
+\definecolor{trening}{RGB}{100, 149, 237}
+\definecolor{test}{RGB}{250, 128, 114}
+\definecolor{validacioni}{RGB}{0, 255, 127}
+
+\colorlet{uv1}{test}
+\definecolor{uv2pom}{RGB}{250, 250, 0}
+\colorlet{uv2}{uv2pom!70}
+\colorlet{uv3}{trening}
+\colorlet{uv4}{validacioni}
+\definecolor{uv5}{RGB}{255, 228, 181}
+
+% For graphics / images
+\usepackage{graphicx}
+
+
+% For stopping footnote break
+\interfootnotelinepenalty=10000
+
+% For [H] in figures
+\usepackage{float}
+\usepackage{subfloat}
+
+% For adding appendices at the end of the main part
+\usepackage[toc,page]{appendix}
+
+% Doesn't insert bigger space between between paragraphs when they doesn't fit the whole page
+\raggedbottom 
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+%%
+% Prints a trailing space in a smart way.
+\usepackage{xspace}
+
+% Prints an epigraph and speaker in sans serif, all-caps type.
+\newcommand{\openepigraph}[2]{%
+  %\sffamily\fontsize{14}{16}\selectfont
+  \begin{fullwidth}
+  \sffamily\large
+  \begin{doublespace}
+  \noindent\allcaps{#1}\\% epigraph
+  \noindent\allcaps{#2}% author
+  \end{doublespace}
+  \end{fullwidth}
+}
+
+% Inserts a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+
+% Inserts a comment in the margin
+\newcommand{\komentar}{\marginpar{\textcolor{red}{Dopuniti.}}}
+
+% Renewed commands
+\addto\captionsserbian{
+  \renewcommand{\bibname}{Literatura}
+}
+\renewcommand{\today}{\ifnum\number\day<10 0\fi \number\day. 
+	\ifcase \month \or januar\or februar\or mart\or april\or maj \or jun\or jul\or avgust\or septembar\or oktobar\or novembar\or decembar\fi\space
+	\number\year.}
+\renewcommand\appendixpagename{Dodaci}
+\renewcommand\appendixtocname{Dodaci}
+
+% Code environments
+\usepackage[Algoritam]{algorithm}
+\usepackage{algpseudocode}
+\newcommand{\var}[1]{{\ttfamily#1}}
+
+% Tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows, petri, topaths, automata, shapes.geometric, fit, matrix, backgrounds, calc, positioning}
+\usepackage{tkz-berge}
+\usepackage[position=top]{subfig}
+\usepackage{pgf,pgfsys,pgffor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+
+% For powerful verbatim-like environments
+\usepackage{listings}
+\usepackage{helvet}
+\lstset{basicstyle=\ttfamily\selectfont,
+escapeinside={||},
+mathescape=true}
+
+% Allows most loose page breaks in multi-line environments
+\usepackage{amsmath}
+\allowdisplaybreaks[4]
+
+% For numbering subsubsections
+\setcounter{secnumdepth}{3}
+
+% Setting itemize symbols
+\renewcommand{\labelitemii}{$\circ$}
+
+% Enabling multicolumns
+\usepackage{multicol}
+
+% Disables auto indentation
+% \setlength{\parindent}{0pt}
+
+% Library for including other pdf documents
+\usepackage[final]{pdfpages}
+
+% For externalization of pgfplots's graphics
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\section{naslov}
+
+\end{document}
